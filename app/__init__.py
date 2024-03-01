@@ -14,8 +14,10 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 from app.blueprints.auth_api import auth_api
+from app.blueprints.books_api import books_api
 
 app.register_blueprint(auth_api)
+app.register_blueprint(books_api)
 
 @login_manager.user_loader
 def load_user(user_id):

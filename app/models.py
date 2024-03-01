@@ -46,3 +46,18 @@ class Book(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+
+class Review(db.Model):
+    review_id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String, nullable=False)
+    book_id = db.Column(db.Integer)
+
+    def __init__(self, title, author, img_small, img_large):
+        self.title = title
+        self.author = author
+        self.img_small = img_small
+        self.img_large = img_large
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()

@@ -1,7 +1,6 @@
 from . import books_api
 from flask import request, jsonify
 from app.models import db, User, Book
-from flask_login import login_required
 
 
 # Add to To Read shelf
